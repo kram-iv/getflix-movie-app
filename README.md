@@ -1,29 +1,70 @@
-## Task for the candidate
+# Getting Started with Create React App
 
-Create a single-page web application - Getflix - that allows a user to enter criteria into a search input field and display matching titles on the page. For each search result, show the title, the poster, and year it released.
-Clicking on a title should bring up a detailed view of the title - plot, cast, etc.
-Have a look at the API documentation from the OMDB API https://www.omdbapi.com/ to fetch movie data.
-You can create your own API key or use: **320f6ab2** (for example http://www.omdbapi.com/?i=tt3896198&apikey=320f6ab2)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- The app should be responsive, i.e. compatible with different screen sizes.
-- Don't worry about trying to be IE9 compatible - use as modern a framework/JS/CSS/HTML as is sensible (i.e. works on a popular browser I downloaded today).
-- Feel free to use whatever libraries you think are necessary (CSS/JSS component providers, state management, routing).
-- Writing tests is always a plus.
-- This scaffolding supports Typescript if you prefer, but it's not required for this exercise.
-  Stretch goals:
-- The API currently returns titles in lots of 10 - if you can, use the page parameter to request more as you scroll.
-- If you have time, we'd love to see any embellishments (e.g. animations, transitions, dynamic fetching/loading).
-  When you're done, please provide the recruiter with the source code in a way that makes sense - zip file is fine, a link to a public repository like GitHub works too. Please provide some instructions for us to run the app (and the tests).
+## Available Scripts
 
-Submission
-install the dependencies with npm
-`npm install`
+In the project directory, you can run:
 
-Runn the application using the start script and navigate to http://localhost:3000/ to view the application.
-`npm start`
+### `npm start`
 
-By default the app shows `star wars` movies. User input in the search bar results in movies being fetched from omdb api and results being displayed on the page.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-I've created cards to display the movie search results and upon user click on a card movie details like
-Cast, Plot, Writer, Genre and Release Date are displayed in a modal.
-Scrolling down the page loads next bunch of movies and is appended to the existing list.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
