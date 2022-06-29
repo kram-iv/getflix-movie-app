@@ -5,41 +5,56 @@ import Modal from 'react-bootstrap/Modal';
 import Loader from './Loader';
 
 const MovieModal = (props) => {
+    const [isLoading, setIsLoading] = useState(true);
     const [movieDetails, setMovieDetails] = useState({});
     const movieId = props.movieId;
     let responseJson;
 
-    const getMovieDetails = async(movieId) => {
+    const getMovieDetails = (movieId) => {
       const api_key = process.env.REACT_APP_OMDB_API_KEY
       const api_url = process.env.REACT_APP_OMDB_URL
       const url = `${api_url}/?i=${movieId}&apikey=${api_key}`;
-      const response = await fetch(url);
-      responseJson = await response.json();
 
-      if (responseJson){
-        console.log(responseJson);
-        setMovieDetails(responseJson);
-      }
-
+      fetch (
+        url
+      ).then(response => {
+        return response.json();
+      }).then( data=> {
+        setMovieDetails(data);
+        console.log(data);
+      });
     };
 
     useEffect(() => {
+      const abortController = new AbortController();
+      setIsLoading(true);
         if (props.open) {
           getMovieDetails(movieId);
         }
+      setIsLoading(false);
+      return () => {
+        // this will cancel the fetch request when the effect is unmounted
+        abortController.abort();
+      };
     },[props.open]);
 
-    // useEffect(() => {
-    //     if (null === movieDetails) {
-    //         return;
-    //     }
-    // }, [movieDetails]);
+    if (isLoading) {
+      console.log("loading...");
+      // return (
+      //   <Modal size="lg" >
+      //     <Modal.Header >
+      //       <Modal.Title>Loading...</Modal.Title>
+      //     </Modal.Header>
+      //   </Modal>
+      // )
+    }
   return (
     <>
       <Modal size="lg" show={props.open} onHide={props.onClose}>
         <Modal.Header closeButton>
-          { !movieDetails ? <Loader/> : null}
-          <Modal.Title>{movieDetails.Title}</Modal.Title>
+          {/* { isLoading ? <Loader/> : null} */}
+          {isLoading ? <Modal.Title>Loading...</Modal.Title> : <Modal.Title>{movieDetails.Title}</Modal.Title>}
+          {/* <Modal.Title>{movieDetails.Title}</Modal.Title> */}
         </Modal.Header>
         <Modal.Body>
             <Image
