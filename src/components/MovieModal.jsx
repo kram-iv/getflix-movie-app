@@ -8,7 +8,6 @@ const MovieModal = (props) => {
     const [isLoading, setIsLoading] = useState(true);
     const [movieDetails, setMovieDetails] = useState({});
     const movieId = props.movieId;
-    let responseJson;
 
     const getMovieDetails = (movieId) => {
       const api_key = process.env.REACT_APP_OMDB_API_KEY
@@ -36,7 +35,7 @@ const MovieModal = (props) => {
         // this will cancel the fetch request when the effect is unmounted
         abortController.abort();
       };
-    },[props.open]);
+    },[props.open,movieId]);
 
     if (isLoading) {
       console.log("loading...");
