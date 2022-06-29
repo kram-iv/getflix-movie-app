@@ -28,9 +28,9 @@ const App = () => {
 
   return (
 		<>
-      <Navbar bg="light" expand="lg" sticky="top" className="mb:3">
+      <Navbar variant="light" expand="lg" sticky="top" className="mb:3 color-nav">
         <Container fluid>
-          <Navbar.Brand href="/">Getflix</Navbar.Brand>
+          <Navbar.Brand href="/" color="white">Getflix</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav

@@ -3,6 +3,14 @@ body {
     color: black;
 }
 
+.color-nav {
+    background-color: #384191;
+}
+
+.navbar-brand {
+    color: #ffffff;
+}
+
 .card:hover {
     box-shadow: 3px 3px 3px white;
     transform: scale(1.02);
